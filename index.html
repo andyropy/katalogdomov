@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Список домов</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .house-card {
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+      flex-grow: 1;
+      max-width: calc(25% - 40px);
+      background-color: #fff;
+      transition: transform 0.3s ease;
+    }
+    .house-card:hover {
+      transform: translateY(-5px);
+    }
+    .house-card img {
+      display: block;
+      margin: 0 auto 10px;
+      border-radius: 5px;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .house-card h2 a {
+      text-decoration: none;
+      color: #333;
+    }
+    .house-card h3 {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    @media only screen and (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+      .house-card {
+        width: calc(100% - 20px);
+        max-width: none;
+        margin-right: 0;
+        margin-left: 0;
+      }
+      .house-card:hover {
+        transform: none;
+      }
+      .house-card h3 {
+        font-size: 12px;
+      }
+    }
+    @media only screen and (min-width: 601px) and (max-width: 1024px) {
+      .house-card {
+        width: calc(50% - 30px);
+        max-width: none;
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="house-card">
+    <h2><a href="bnb.html" target="_blank">Дом с бассейном и банкетным залом возле моря Фонтанка</a></h2>
+    <a href="bnb.html" target="_blank"><img src="img/Новая папка/бнб пол дома/гланая.jpeg"/></a>
+    <h3>40- 900$</h3>
+    <h3>500м², 10 соток</h3>
+    <h3>Для отдыха и мероприятий</h3>
+  </div>
+  <div class="house-card">
+    <h2><a href="bnbevgen.html" target="_blank">дом посуточно с бассейном и панорамным видом на море</a></h2>
+    <a href="bnbevgen.html" target="_blank"><img src="img/Новая папка/бнб женя/главная.jpeg"/></a>
+    <h3>250$-600$</h3>
+    <h3>100м², 4.5 соток</h3>
+    <h3>Для семейного отдыха</h3>
+  </div>
+  <div class="house-card">
+    <h2><a href="igorsavik.html" target="_blank">Дом с бассейном в Совиньоне</a></h2>
+    <a href="igorsavik.html" target="_blank"><img src="img/игорь савик/1.jpeg" alt="Дом с бассейном в Совиньоне"/></a>
+    <h3>Цена: 350-500$</h3>
+    <h3>Площадь: Дом 300м², 11 соток</h3>
+    <h3>Для семейного отдыха</h3>
+  </div>
+  <div class="house-card">
+    <h2><a href="lititsiya.html" target="_blank">Большой дом с бассейном на 7 ст</a></h2>
+    <a href="lititsiya.html" target="_blank"><img src="img/литиция/басик.jpg"/></a>
+    <h3>600-800$</h3>
+    <h3>400², 4 соток</h3>
+    <h3>Для отдыха и мероприятий</h3>
+  </div>
+  <div class="house-card">
+    <h2><a href="ruben.html" target="_blank">Роскошный особняк с бассейном в Совиньоне</a></h2>
+    <a href="ruben.html" target="_blank"><img src="img/Новая папка/рубен/гланая.PNG"/></a>
+    <h3>1000-1300$</h3>
+    <h3>Дом 700м², 10 соток</h3>
+    <h3>Для семейного отдыха</h3>
+  </div>
+  <div class="house-card">
+    <h2><a href="dimaolx.html" target="_blank">Дом с бассейном в Черноморске</a></h2>
+    <a href="dimaolx.html" target="_blank"><img src="img/Новая папка/дмитрий олх/улица.jpg"/></a>
+    <h3>6000 грн</h3>
+    <h3>Дом 110м², 12 соток</h3>
+    <h3>Для семейного отдыха,от 2 суток</h3>
+  </div>
+  <div class="house-card">
+    <h2><a href="404.html" target="_blank">Дом с бассейном на 13 фонтана</a></h2>
+    <a href="404.html" target="_blank"><img src="img/дом на 13 фонтана/1.jpg" alt="Дом с бассейном на 13 фонтана"/></a>
+    <h3>Цена: 450-650$</h3>
+    <h3>Площадь: Дом 400м², 12 соток</h3>
+    <h3>Для семейного отдыха и мероприятий</h3>
+  </div>
+  <div class="house-card">
+    <h2><a href="dom1.html" target="_blank">Дом на 10 ст возле моря</a></h2>
+    <a href="dom1.html" target="_blank"><img src="img/дом1/3.jpg"/></a>
+    <h3>5000-6000 грн</h3>
+    <h3> Дом 120м², 2 соток</h3>
+    <h3>Для семейного отдыха и мероприятий</h3>
+  </div>
+  <div class="house-card">
+    <h2><a href="selo.html" target="_blank">Дом с бассейном в царском селе</a></h2>
+    <a href="selo.html" target="_blank"><img src="img/царское село/1.jpeg" alt="Дом в царском селе"/></a>
+    <h3>Цена: 300-600$</h3>
+    <h3>Площадь: 400м²</h3>
+    <h3>Для семейного отдыха и мероприятий</h3>
+  </div>
+  <div class="house-card">
+    <h2><a href="pilogeya.html" target="_blank">Дом с бассейном Аркадия </a></h2>
+    <a href="pilogeya.html" target="_blank"><img src="img/пилогея/1.jpeg" alt="Дом на ул.Леваневского"/></a>
+    <h3>Цена: 200-400$</h3>
+    <h3>Площадь: Дом 200м², 5 соток</h3>
+    <h3>Для семейного отдыха и мероприятий</h3>
+  </div>
+  <div class="house-card">
+    <h2><a href="nellya.html" target="_blank">Дом с бассейном у моря в Совиньоне</a></h2>
+    <a href="nellya.html" target="_blank"><img src="img/нелля/image (1).jpeg" alt="Вилла у моря"/></a>
+    <h3>Цена: 450-700$</h3>
+    <h3>Площадь: 300м²</h3>
+    <h3>Для семейного отдыха и мероприятий</h3>
+  </div>
+  <div class="house-card">
+    <h2><a href="elenakriz.html" target="_blank">Дом в Крыжановке</a></h2>
+    <a href="elenakriz.html" target="_blank"><img src="img/елене крыжановка/главное.jpg"/></a>
+    <h3>Цена: X-Y$</h3>
+    <h3>Площадь: 250м², 6 соток</h3>
+    <h3>Для семейного отдыха, от 3х дней</h3>
+  </div>
+  <div class="house-card">
+    <h2><a href="serg10f1.html" target="_blank">Дом с бассейном на 10 ст</a></h2>
+    <a href="serg10f1.html" target="_blank"><img src="img/сергей 2 дома 10 фонтна/AnyConv.com__басикк.jpg"/></a>
+    <h3>Цена 5500-8000 грн</h3>
+    <h3>Площадь: 120м², 3 соток</h3>
+    <h3>Для семейного отдыха</h3>
+  </div>
+  <div class="house-card">
+    <h2><a href="serg10f2.html" target="_blank">Дом с бассейном для семейного отдыха до 5 человек на 10 станции</a></h2>
+    <a href="serg10f2.html" target="_blank"><img src="img/сергей 2 дома 10 фонтна/2/беседка и басик.jpg"/></a>
+    <h3>4500-6000 грн</h3>
+    <h3>Площадь: 80м², 1 соток</h3>
+    <h3>Для семейного отдыха</h3>
+  </div>
+  <div class="house-card">
+    <h2><a href="nadezdahutor.html" target="_blank">Дом с бассейном в Червоном хуторе</a></h2>
+    <a href="nadezdahutor.html" target="_blank"><img src="img/надежда хутор/басик1.jpg"/></a>
+    <h3> 9000-15000 грн</h3>
+    <h3>Площадь: 350м², 10 соток</h3>
+    <h3>Для семейного отдыха и мероприятий</h3>
+  </div>
+  <div class="house-card">
+    <h2><a href="1.html." target="_blank">?</a></h2>
+    <a href="1.html" target="_blank"><img src="img/Новая папка/1/главная.jpg"/></a>
+    <h3>Цена: ?$</h3>
+    <h3>Площадь: ?м², ? соток</h3>
+    <h3>Для семейного отдыха</h3>
+  </div>
+  <div class="house-card">
+    <h2><a href="3.html." target="_blank">?</a></h2>
+    <a href="3.html" target="_blank"><img src="img/Новая папка/3/диван2.jpg"/></a>
+    <h3>Цена: ?$</h3>
+    <h3>Площадь: ?м², ? соток</h3>
+    <h3>Для семейного отдыха</h3>
+  </div>
+  <div class="house-card">
+    <h2><a href="4.html." target="_blank">?</a></h2>
+    <a href="4.html" target="_blank"><img src="img/Новая папка/4/вход.jpg"/></a>
+    <h3>Цена: ?$</h3>
+    <h3>Площадь: ?м², ? соток</h3>
+    <h3>Для семейного отдыха и мероприятий</h3>
+  </div>
+  <div class="house-card">
+    <h2><a href="2.html." target="_blank">Дом в крыжановке</a></h2>
+    <a href="2.html" target="_blank"><img src="img/Новая папка/2/главная.jpg"/></a>
+    <h3>Цена 11000-20000 грн</h3>
+    <h3>Дом 140м², 6.5 соток</h3>
+    <h3>?</h3>
+  </div>
+  <div class="house-card">
+    <h2><a href="dimriavadik.html" target="_blank">Дом в шаге от моря в Совиньоне</a></h2>
+    <a href="dimriavadik.html" target="_blank"><img src="img/Новая папка/дим риа вадик/шлавная дома.jpg"/></a>
+    <h3>200-450$</h3>
+    <h3>Дом 270м²</h3>
+    <h3>Для отдыха</h3>
+  </div>
+  <!-- Дополнительные карточки -->
+</div>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мой сайт</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .slider-container {
+      width: 100%;
+      overflow: hidden;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .slider {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .slide {
+      flex: 0 0 auto;
+      width: 100%;
+      display: none;
+      opacity: 0;
+    }
+
+    .slide.active {
+      display: block;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+
+    .slide img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .text-container {
+      text-align: center;
+      width: 90%;
+      margin: 10px auto;
+    }
+
+    .centered-text {
+      word-wrap: break-word;
+    }
+
+    .button-container {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .button {
+      padding: 5px 10px;
+    }
+
+    @media only screen and (min-width: 768px) {
+      .slider-container {
+        height: 60vh;
+      }
+
+      .text-container {
+        max-width: 60%;
+      }
+
+      .slide img {
+        max-width: 100%;
+        max-height: 60vh;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<main>
+<div class="slider-container">
+<div class="slider" ontouchstart="handleTouchStart(event)" ontouchend="handleTouchEnd(event)">
+<div class="slide active">
+<img src="img/сергей 2 дома 10 фонтна/2/беседка и басик.jpg"/></div>
+<div class="slide">
+<img src="img/сергей 2 дома 10 фонтна/2/басик.jpg"/></div>
+<div class="slide">
+<img src="img/сергей 2 дома 10 фонтна/2/беседка.jpg"/></div>
+<div class="slide">
+<img src="img/сергей 2 дома 10 фонтна/2/мангал.jpg"/></div>
+<div class="slide">
+<img src="img/сергей 2 дома 10 фонтна/2/кухня на улице.jpg"/></div>
+<div class="slide">
+<img src="img/сергей 2 дома 10 фонтна/2/комната.jpg"/></div>
+<div class="slide">
+<img src="img/сергей 2 дома 10 фонтна/2/комната1.jpg"/></div>
+<div class="slide">
+<img src="img/сергей 2 дома 10 фонтна/2/комната2.jpg"/></div>
+<div class="slide">
+<img src="img/сергей 2 дома 10 фонтна/2/комната11.jpg"/></div>
+<div class="slide">
+<img src="img/сергей 2 дома 10 фонтна/2/туалет.jpg"/></div>
+<div class="slide">
+<img src="img/сергей 2 дома 10 фонтна/2/душ.jpg"/></div>
+      <!-- Добавьте другие слайды по аналогии -->
+    </div>
+  </div>
+
+  <div class="button-container">
+    <button class="button" onclick="prevSlide()">Назад</button>
+    <button class="button" onclick="nextSlide()">Вперед</button>
+  </div>
+
+  <div class="text-container">
+    <div class="text-wrap">
+      <p class="centered-text">
+        В доме две спальни с кондиционером и т.в .
+        Летняя кухня с посудой и всем необходимы. С/у и душевая раздельные.
+        На территории бассейн 6м × 3м × 1.60м , мангал , шампура , шезлонги. До моря 900м
+        Есть генератор
+        От 3х суток
+      </p>
+    </div>
+  </div>
+</main>
+
+<script>
+  let slideIndex = 0;
+  let startX;
+
+  function handleTouchStart(e) {
+    startX = e.touches[0].clientX;
+  }
+
+  function handleTouchEnd(e) {
+    let endX = e.changedTouches[0].clientX;
+    let diff = startX - endX;
+
+    if (diff > 50) {
+      nextSlide();
+    } else if (diff < -50) {
+      prevSlide();
+    }
+  }
+
+  function showSlide(n) {
+    let slides = document.getElementsByClassName("slide");
+    if (n >= slides.length) {
+      slideIndex = 0;
+    }
+    if (n < 0) {
+      slideIndex = slides.length - 1;
+    }
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].classList.remove("active");
+    }
+    slides[slideIndex].classList.add("active");
+  }
+
+  function prevSlide() {
+    slideIndex--;
+    showSlide(slideIndex);
+  }
+
+  function nextSlide() {
+    slideIndex++;
+    showSlide(slideIndex);
+  }
+
+  document.addEventListener('DOMContentLoaded', (event) => {
+    showSlide(slideIndex);
+  });
+</script>
+</body>
+</html>
