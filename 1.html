@@ -13,6 +13,12 @@
       flex-direction: column;
       min-height: 100vh;
     }
+    .banner {
+      background-color: #007BFF;
+      color: white;
+      padding: 1px 1px;
+      text-align: center;
+    }
 
     main {
       flex: 1;
@@ -71,6 +77,17 @@
 
     .button {
       padding: 5px 10px;
+      text-decoration: none;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #0056b3;
     }
 
     @media only screen and (min-width: 768px) {
@@ -90,7 +107,9 @@
   </style>
 </head>
 <body>
-
+<div class="banner">
+  <p>Андрей:0688504971</p>
+</div>
 <main>
 <div class="slider-container">
 <div class="slider" ontouchstart="handleTouchStart(event)" ontouchend="handleTouchEnd(event)">
@@ -134,19 +153,17 @@
   <div class="text-container">
     <div class="text-wrap">
       <p class="centered-text">
-     Новый современный дом для семейного отдыха
- район Совиньон 
-есть вся техника генератор и бесперебойник 
-4 спальни, 8 спальных, 2 с/у
-двор в зелени и парко место под 2 машины
- Басейн 7,5 м и беседка с камином закрытая с кондиционером , туалетом , холодильником 
-море в близости 1км. 
-заезд 14:00 выезд 11:00 
-с животными нельзя
-
-Цена 350-500$
+        Новый современный дом для семейного отдыха не для шумных компаний вечеринки и дни рождения нет бронирования!
+        от 3-х дней можно рассмотреть долгосрочную аренду
+        Первая сдача пригород район Совиньон есть вся техника генератор и бесперебойник
+        Дом радостно примет до 8 человек 4 спальни 2 сан узла двор в зелени и парко место под 2 машины
+        Басейн 7,5 м и беседка с камином закрытая с кондиционером , туалетом , холодильником море в близости 1км.
+        заезд 14:00 выезд 11:00 с животными нельзя.
       </p>
     </div>
+  </div>
+  <div class="button-container">
+    <a href="index.html" class="button">На главную</a>
   </div>
 </main>
 
