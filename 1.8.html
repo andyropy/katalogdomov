@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мой сайт</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .banner {
+      background-color: #007BFF;
+      color: white;
+      padding: 1px 1px;
+      text-align: center;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .slider-container {
+      width: 100%;
+      overflow: hidden;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .slider {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .slide {
+      flex: 0 0 auto;
+      width: 100%;
+      display: none;
+      opacity: 0;
+    }
+
+    .slide.active {
+      display: block;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+
+    .slide img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .text-container {
+      text-align: center;
+      width: 90%;
+      margin: 10px auto;
+    }
+
+    .centered-text {
+      word-wrap: break-word;
+    }
+
+    .button-container {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .button {
+      padding: 5px 10px;
+      text-decoration: none;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #0056b3;
+    }
+
+    @media only screen and (min-width: 768px) {
+      .slider-container {
+        height: 60vh;
+      }
+
+      .text-container {
+        max-width: 60%;
+      }
+
+      .slide img {
+        max-width: 100%;
+        max-height: 60vh;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="banner">
+  <p>Андрей:0688504971</p>
+</div>
+<main>
+<div class="slider-container">
+<div class="slider" ontouchstart="handleTouchStart(event)" ontouchend="handleTouchEnd(event)">
+<div class="slide active">
+<img src="img/1.8/image001.png"/></div>
+<div class="slide">
+<img src="img/1.8/image003.png"/></div>
+<div class="slide">
+<img src="img/1.8/image005.png"/></div>
+<div class="slide">
+<img src="img/1.8/image007.png"/></div>
+<div class="slide">
+<img src="img/1.8/image009.png"/></div>
+<div class="slide">
+<img src="img/1.8/image011.png"/></div>
+<div class="slide">
+<img src="img/1.8/image013.png"/></div>
+<div class="slide">
+<img src="img/1.8/image015.png"/></div>
+<div class="slide">
+<img src="img/1.8/image017.png"/></div>
+<div class="slide">
+<img src="img/1.8/image019.png"/></div>
+<div class="slide">
+<img src="img/1.8/image021.png"/></div>
+<div class="slide">
+<img src="img/1.8/image027.png"/></div>
+<div class="slide">
+<img src="img/1.8/image029.png"/></div>
+<div class="slide">
+<img src="img/1.8/image031.png"/></div>
+<div class="slide">
+<img src="img/1.8/image033.png"/></div>
+<div class="slide">
+<img src="img/1.8/image035.png"/></div>
+<div class="slide">
+<img src="img/1.8/image037.png"/></div>
+<div class="slide">
+<img src="img/1.8/image039.png"/></div>
+<div class="slide">
+<img src="img/1.8/image041.png"/></div>
+<div class="slide">
+<img src="img/1.8/image043.png"/></div>
+<div class="slide">
+<img src="img/1.8/image045.png"/></div>
+<div class="slide">
+<img src="img/1.8/image047.png"/></div>
+<div class="slide">
+<img src="img/1.8/image049.png"/></div>
+<div class="slide">
+<img src="img/1.8/image051.png"/></div>
+<div class="slide">
+<img src="img/1.8/image053.png"/></div>
+<div class="slide">
+<img src="img/1.8/image055.png"/></div>
+<div class="slide">
+<img src="img/1.8/image057.png"/></div>
+<div class="slide">
+<img src="img/1.8/image059.png"/></div>
+<div class="slide">
+<img src="img/1.8/image061.png"/></div>
+<div class="slide">
+<img src="img/1.8/image063.png"/></div>
+<div class="slide">
+<img src="img/1.8/image065.png"/></div>
+<div class="slide">
+<img src="img/1.8/image067.png"/></div>
+      <!-- Добавьте другие слайды по аналогии -->
+    </div>
+  </div>
+  <div class="button-container">
+    <button class="button" onclick="prevSlide()">Назад</button>
+    <button class="button" onclick="nextSlide()">Вперед</button>
+  </div>
+
+  <div class="text-container">
+    <div class="text-wrap">
+      <p class="centered-text">
+        Море в 5 минутах ходьбы
+        Площадь дома 150 м2, на участке в 10 соток. Есть бассейн с подогревом и подсветкой.<br>
+        Просторная гостиная кухня -барбекю с камином и потрясающим видом на лес. В лесной зоне находится большая беседка с освещением.<br>
+        В доме 2 спальни, 2 гардеробные, 1 хоз-помещения. Есть диван на 2-3 спальных места<br>
+        1этажный дом в  "Сосновом берегу"-закрытый частный посёлок, въезд только по пропускам.
+      </p>
+    </div>
+  </div>
+  <div class="button-container">
+    <a href="index.html" class="button">На главную</a>
+  </div>
+</main>
+
+<script>
+  let slideIndex = 0;
+  let startX;
+
+  function handleTouchStart(e) {
+    startX = e.touches[0].clientX;
+  }
+
+  function handleTouchEnd(e) {
+    let endX = e.changedTouches[0].clientX;
+    let diff = startX - endX;
+
+    if (diff > 50) {
+      nextSlide();
+    } else if (diff < -50) {
+      prevSlide();
+    }
+  }
+
+  function showSlide(n) {
+    let slides = document.getElementsByClassName("slide");
+    if (n >= slides.length) {
+      slideIndex = 0;
+    }
+    if (n < 0) {
+      slideIndex = slides.length - 1;
+    }
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].classList.remove("active");
+    }
+    slides[slideIndex].classList.add("active");
+  }
+
+  function prevSlide() {
+    slideIndex--;
+    showSlide(slideIndex);
+  }
+
+  function nextSlide() {
+    slideIndex++;
+    showSlide(slideIndex);
+  }
+
+  document.addEventListener('DOMContentLoaded', (event) => {
+    showSlide(slideIndex);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мой сайт</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .banner {
+      background-color: #007BFF;
+      color: white;
+      padding: 1px 1px;
+      text-align: center;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .slider-container {
+      width: 100%;
+      overflow: hidden;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .slider {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .slide {
+      flex: 0 0 auto;
+      width: 100%;
+      display: none;
+      opacity: 0;
+    }
+
+    .slide.active {
+      display: block;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+
+    .slide img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .text-container {
+      text-align: center;
+      width: 90%;
+      margin: 10px auto;
+    }
+
+    .centered-text {
+      word-wrap: break-word;
+    }
+
+    .button-container {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .button {
+      padding: 5px 10px;
+      text-decoration: none;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #0056b3;
+    }
+
+    @media only screen and (min-width: 768px) {
+      .slider-container {
+        height: 60vh;
+      }
+
+      .text-container {
+        max-width: 60%;
+      }
+
+      .slide img {
+        max-width: 100%;
+        max-height: 60vh;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="banner">
+  <p>Андрей:0688504971</p>
+</div>
+<main>
+<div class="slider-container">
+<div class="slider" ontouchstart="handleTouchStart(event)" ontouchend="handleTouchEnd(event)">
+<div class="slide active">
+<img src="img/1.7 фонтанка/image001.png"/></div>
+<div class="slide">
+<img src="img/1.7 фонтанка/image003.png"/></div>
+<div class="slide">
+<img src="img/1.7 фонтанка/image005.png"/></div>
+<div class="slide">
+<img src="img/1.7 фонтанка/image007.png"/></div>
+<div class="slide">
+<img src="img/1.7 фонтанка/image009.png"/></div>
+<div class="slide">
+<img src="img/1.7 фонтанка/image011.png"/></div>
+<div class="slide">
+<img src="img/1.7 фонтанка/image013.png"/></div>
+<div class="slide">
+<img src="img/1.7 фонтанка/image015.png"/></div>
+<div class="slide">
+<img src="img/1.7 фонтанка/image017.png"/></div>
+<div class="slide">
+<img src="img/1.7 фонтанка/image019.png"/></div>
+<div class="slide">
+<img src="img/1.7 фонтанка/image021.png"/></div>
+<div class="slide">
+<img src="img/1.7 фонтанка/image023.png"/></div>
+<div class="slide">
+<img src="img/1.7 фонтанка/image025.png"/></div>
+<div class="slide">
+<img src="img/1.7 фонтанка/image027.jpg"/></div>
+<div class="slide">
+<img src="img/1.7 фонтанка/image029.jpg"/></div>
+<div class="slide">
+<img src="img/1.7 фонтанка/image030.png"/></div>
+      <!-- Добавьте другие слайды по аналогии -->
+    </div>
+  </div>
+  <div class="button-container">
+    <button class="button" onclick="prevSlide()">Назад</button>
+    <button class="button" onclick="nextSlide()">Вперед</button>
+  </div>
+
+  <div class="text-container">
+    <div class="text-wrap">
+      <p class="centered-text">
+        Дом в крыжановке площадью 30м2.<br>
+        Расположен на 10 сотках земли.<br>
+        Для компаний до 10 чел (без ночевки) Максимальное количество гостей 15 человек (без ночевки). Стол рассчитан на 10 человек.<br>
+        Спальных мест на 2 человека + 2 ребенока: одна двуспальная кровать и диванчик на фото не раскладные (ширина 1,30- поместится только ребенок).<br>
+        Есть акустическую систему- можно включать музыку (входит в стоимость), а также шампура и решетка для мангала, посуда.<br>
+        Бассейн 9х3.5м и 1.50 глубина, подогрев от солнечных панелей. Вода в бассейне фильтруется, хлорирована, +бассейн чиститься каждое утро.<br>
+        Общий двор с собственниками. От моря и центральной дороги около 3км. 10минут на авто до магазинов АТБ, Копейка.<br>
+        До центра Одессы 20-30минут на авто. Фонтанка.<br>
+        Без животных!<br>
+        Заезд с 12:00, выезд до 10:00.
+      </p>
+    </div>
+  </div>
+  <div class="button-container">
+    <a href="index.html" class="button">На главную</a>
+  </div>
+</main>
+
+<script>
+  let slideIndex = 0;
+  let startX;
+
+  function handleTouchStart(e) {
+    startX = e.touches[0].clientX;
+  }
+
+  function handleTouchEnd(e) {
+    let endX = e.changedTouches[0].clientX;
+    let diff = startX - endX;
+
+    if (diff > 50) {
+      nextSlide();
+    } else if (diff < -50) {
+      prevSlide();
+    }
+  }
+
+  function showSlide(n) {
+    let slides = document.getElementsByClassName("slide");
+    if (n >= slides.length) {
+      slideIndex = 0;
+    }
+    if (n < 0) {
+      slideIndex = slides.length - 1;
+    }
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].classList.remove("active");
+    }
+    slides[slideIndex].classList.add("active");
+  }
+
+  function prevSlide() {
+    slideIndex--;
+    showSlide(slideIndex);
+  }
+
+  function nextSlide() {
+    slideIndex++;
+    showSlide(slideIndex);
+  }
+
+  document.addEventListener('DOMContentLoaded', (event) => {
+    showSlide(slideIndex);
+  });
+</script>
+</body>
+</html>
