@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .banner {
+            background-color: #007BFF;
+            color: white;
+            padding: 1px 1px;
+            text-align: center;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slider-container {
+            width: 100%;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .slider {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slide {
+            flex: 0 0 auto;
+            width: 100%;
+            display: none;
+            opacity: 0;
+        }
+
+        .slide.active {
+            display: block;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .slide img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .text-container {
+            text-align: center;
+            width: 90%;
+            margin: 10px auto;
+        }
+
+        .centered-text {
+            word-wrap: break-word;
+        }
+
+        .button-container {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .button {
+            padding: 5px 10px;
+            text-decoration: none;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        @media only screen and (min-width: 768px) {
+            .slider-container {
+                height: 60vh;
+            }
+
+            .text-container {
+                max-width: 60%;
+            }
+
+            .slide img {
+                max-width: 100%;
+                max-height: 60vh;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="banner">
+    <p>Андрей:0688504971</p>
+</div>
+<main>
+    <div class="slider-container">
+        <div class="slider" ontouchstart="handleTouchStart(event)" ontouchend="handleTouchEnd(event)">
+            <div class="slide active">
+                <img src="img/new/1/главная.jpg"/></div>
+            <div class="slide">
+                <img src="img/new/1/двор1.jpg"/></div>
+            <div class="slide">
+                <img src="img/new/1/двор2.jpg"/></div>
+            <div class="slide">
+                <img src="img/new/1/двор3.jpg"/></div>
+            <div class="slide">
+                <img src="img/new/1/зал.jpg"/></div>
+            <div class="slide">
+                <img src="img/new/1/зал1.jpg"/></div>
+            <div class="slide">
+                <img src="img/new/1/зал2.jpg"/></div>
+            <div class="slide">
+                <img src="img/new/1/кухня.jpg"/></div>
+            <div class="slide">
+                <img src="img/new/1/кухня1.jpg"/></div>
+            <div class="slide">
+                <img src="img/new/1/спльня.jpg"/></div>
+            <div class="slide">
+                <img src="img/new/1/спальня3.jpg"/></div>
+            <div class="slide">
+                <img src="img/new/1/спальня1.jpg"/></div>
+            <div class="slide">
+                <img src="img/new/1/спальнч2.jpg"/></div>
+            <div class="slide">
+                <img src="img/new/1/ванна.jpg"/></div>
+            <div class="slide">
+                <img src="img/new/1/сауна.jpg"/></div>
+            <div class="slide">
+                <img src="img/new/1/сауна1.jpg"/></div>
+            <!-- Добавьте другие слайды по аналогии -->
+        </div>
+    </div>
+    <div class="button-container">
+        <button class="button" onclick="prevSlide()">Назад</button>
+        <button class="button" onclick="nextSlide()">Вперед</button>
+    </div>
+
+    <div class="text-container">
+        <div class="text-wrap">
+            <p class="centered-text">
+                Оренда будинку на 11 ст. Фонтану
+                До моря 15 хвилин.
+
+                Ділянка 12 соток.
+                Будинок складається з двох поверхів.
+                І цокольного поверху
+
+                Три великі спальні
+                Вітальня
+                Дві кухні
+<br>
+                Цокольний поверх повністю обладнаний.
+                Щоб спокійно провести час під час повітряних тривог
+                Є спальня і вітальня.
+                Спортзал
+
+                Басейн у дворі.
+                І в цокольному поверсі
+                Баня
+                Зона барбекю
+                Зелена зона біля басейну
+                На терасі є спортивний куточок.
+<br>
+                Місце для 2 і більше авто.
+
+                За потреби є помічниця по дому.
+
+
+                Особливості планування: з басейном
+                Приміщення: баня / сауна  •  басейн
+                На території є: барбекю
+            </p>
+        </div>
+    </div>
+    <div class="button-container">
+        <a href="index.html" class="button">На главную</a>
+    </div>
+</main>
+
+<script>
+    let slideIndex = 0;
+    let startX;
+
+    function handleTouchStart(e) {
+        startX = e.touches[0].clientX;
+    }
+
+    function handleTouchEnd(e) {
+        let endX = e.changedTouches[0].clientX;
+        let diff = startX - endX;
+
+        if (diff > 50) {
+            nextSlide();
+        } else if (diff < -50) {
+            prevSlide();
+        }
+    }
+
+    function showSlide(n) {
+        let slides = document.getElementsByClassName("slide");
+        if (n >= slides.length) {
+            slideIndex = 0;
+        }
+        if (n < 0) {
+            slideIndex = slides.length - 1;
+        }
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].classList.remove("active");
+        }
+        slides[slideIndex].classList.add("active");
+    }
+
+    function prevSlide() {
+        slideIndex--;
+        showSlide(slideIndex);
+    }
+
+    function nextSlide() {
+        slideIndex++;
+        showSlide(slideIndex);
+    }
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        showSlide(slideIndex);
+    });
+</script>
+</body>
+</html>

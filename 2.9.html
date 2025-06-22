@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .banner {
+            background-color: #007BFF;
+            color: white;
+            padding: 1px 1px;
+            text-align: center;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slider-container {
+            width: 100%;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .slider {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slide {
+            flex: 0 0 auto;
+            width: 100%;
+            display: none;
+            opacity: 0;
+        }
+
+        .slide.active {
+            display: block;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .slide img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .text-container {
+            text-align: center;
+            width: 90%;
+            margin: 10px auto;
+        }
+
+        .centered-text {
+            word-wrap: break-word;
+        }
+
+        .button-container {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .button {
+            padding: 5px 10px;
+            text-decoration: none;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        @media only screen and (min-width: 768px) {
+            .slider-container {
+                height: 60vh;
+            }
+
+            .text-container {
+                max-width: 60%;
+            }
+
+            .slide img {
+                max-width: 100%;
+                max-height: 60vh;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="banner">
+    <p>Андрей:0688504971</p>
+</div>
+<main>
+    <div class="slider-container">
+        <div class="slider" ontouchstart="handleTouchStart(event)" ontouchend="handleTouchEnd(event)">
+            <div class="slide active">
+                <img src="img/new/7/Без названия.jpg"/></div>
+            <div class="slide">
+                <img src="img/new/7/Без названия (1).jpg"/></div>
+            <div class="slide">
+                <img src="img/new/7/Без названия (2).jpg"/></div>
+            <div class="slide">
+                <img src="img/new/7/Без названия (3).jpg"/></div>
+            <div class="slide">
+                <img src="img/new/7/Без названия (4).jpg"/></div>
+            <div class="slide">
+                <img src="img/new/7/Без названия (5).jpg"/></div>
+            <div class="slide">
+                <img src="img/new/7/Без названия (6).jpg"/></div>
+            <div class="slide">
+                <img src="img/new/7/Без названия (7).jpg"/></div>
+            <div class="slide">
+                <img src="img/new/7/Без названия (8).jpg"/></div>
+            <div class="slide">
+                <img src="img/new/7/Без названия (9).jpg"/></div>
+            <div class="slide">
+                <img src="img/new/7/Без названия (10).jpg"/></div>
+            <div class="slide">
+                <img src="img/new/7/Без названия (11).jpg"/></div>
+            <div class="slide">
+                <img src="img/new/7/Без названия (12).jpg"/></div>
+
+            <!-- Добавьте другие слайды по аналогии -->
+        </div>
+    </div>
+    <div class="button-container">
+        <button class="button" onclick="prevSlide()">Назад</button>
+        <button class="button" onclick="nextSlide()">Вперед</button>
+    </div>
+
+    <div class="text-container">
+        <div class="text-wrap">
+            <p class="centered-text">
+                Двухуровневый дом в морской тематике, расположен на ул. Новгородская (7 ст. Люстдорфской дороги).
+                Общая площадь дома 200м2.
+                - 3 спальни
+                - 2 гостиные, одна из который с шестом и барной стойкой, а во вторая с зоной барбекю и большой зоной отдыха
+                - 2 санузла
+                - Кухня-столовая
+                Во дворе беседка с летней кухней, бассейн с подогревом, сауна.
+                Дом полностью укомплектован мебелью и бытовой техникой, плазменные ТV, кондиционеры.
+                Комфортное размещение до 14 человек.
+                Для Мероприятий цена оговаривается.
+            </p>
+        </div>
+    </div>
+    <div class="button-container">
+        <a href="index.html" class="button">На главную</a>
+    </div>
+</main>
+
+<script>
+    let slideIndex = 0;
+    let startX;
+
+    function handleTouchStart(e) {
+        startX = e.touches[0].clientX;
+    }
+
+    function handleTouchEnd(e) {
+        let endX = e.changedTouches[0].clientX;
+        let diff = startX - endX;
+
+        if (diff > 50) {
+            nextSlide();
+        } else if (diff < -50) {
+            prevSlide();
+        }
+    }
+
+    function showSlide(n) {
+        let slides = document.getElementsByClassName("slide");
+        if (n >= slides.length) {
+            slideIndex = 0;
+        }
+        if (n < 0) {
+            slideIndex = slides.length - 1;
+        }
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].classList.remove("active");
+        }
+        slides[slideIndex].classList.add("active");
+    }
+
+    function prevSlide() {
+        slideIndex--;
+        showSlide(slideIndex);
+    }
+
+    function nextSlide() {
+        slideIndex++;
+        showSlide(slideIndex);
+    }
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        showSlide(slideIndex);
+    });
+</script>
+</body>
+</html>
